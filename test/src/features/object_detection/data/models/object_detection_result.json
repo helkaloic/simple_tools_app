@@ -1,0 +1,82 @@
+[
+    {
+        "bounding_box": {
+            "x1": "305",
+            "x2": "716",
+            "y1": "306",
+            "y2": "521"
+        },
+        "confidence": "0.79",
+        "label": "bed"
+    },
+    {
+        "bounding_box": {
+            "x1": "164",
+            "x2": "281",
+            "y1": "253",
+            "y2": "467"
+        },
+        "confidence": "0.6",
+        "label": "potted plant"
+    },
+    {
+        "bounding_box": {
+            "x1": "192",
+            "x2": "239",
+            "y1": "400",
+            "y2": "477"
+        },
+        "confidence": "0.39",
+        "label": "vase"
+    },
+    {
+        "bounding_box": {
+            "x1": "656",
+            "x2": "716",
+            "y1": "187",
+            "y2": "245"
+        },
+        "confidence": "0.37",
+        "label": "clock"
+    },
+    {
+        "bounding_box": {
+            "x1": "192",
+            "x2": "241",
+            "y1": "429",
+            "y2": "479"
+        },
+        "confidence": "0.37",
+        "label": "vase"
+    },
+    {
+        "bounding_box": {
+            "x1": "211",
+            "x2": "270",
+            "y1": "152",
+            "y2": "217"
+        },
+        "confidence": "0.31",
+        "label": "potted plant"
+    },
+    {
+        "bounding_box": {
+            "x1": "712",
+            "x2": "753",
+            "y1": "490",
+            "y2": "509"
+        },
+        "confidence": "0.31",
+        "label": "book"
+    },
+    {
+        "bounding_box": {
+            "x1": "193",
+            "x2": "242",
+            "y1": "370",
+            "y2": "451"
+        },
+        "confidence": "0.3",
+        "label": "vase"
+    }
+]

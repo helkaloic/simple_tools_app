@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:simple_tools_app/injection_container.dart';
-import 'package:simple_tools_app/src/app/routes/router.dart';
+
+import '../injection_container.dart';
+import 'app/routes/router.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
