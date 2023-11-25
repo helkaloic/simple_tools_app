@@ -16,3 +16,7 @@ class ServerFailure extends Failure {
 class ConnectionFailure extends Failure {
   const ConnectionFailure(super.message);
 }
+
+class NoFileFailure extends Failure {
+  const NoFileFailure(super.message);
+}

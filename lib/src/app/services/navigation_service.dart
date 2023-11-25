@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class NavigationService {
   late GlobalKey<NavigatorState> navigationKey;
@@ -10,8 +9,6 @@ class NavigationService {
   NavigationService._init() {
     navigationKey = GlobalKey<NavigatorState>();
   }
-
-  pushNamed(String name) => navigationKey.currentContext!.pushNamed(name);
 
   showMessage(String text) {
     ScaffoldMessenger.of(navigationKey.currentContext!).showSnackBar(

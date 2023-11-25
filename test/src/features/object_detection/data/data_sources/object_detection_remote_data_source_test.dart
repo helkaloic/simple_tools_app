@@ -9,6 +9,7 @@ import 'package:simple_tools_app/src/features/object_detection/data/data_sources
 import 'package:simple_tools_app/src/features/object_detection/data/models/object_detection.dart';
 
 import '../../../../../helper/file_reader.dart';
+import '../../../../app/resources/assets.dart';
 
 class MockDio extends Mock implements Dio {}
 
@@ -17,9 +18,7 @@ void main() async {
   late MockDio mockDio;
 
   final tFile = XFile(
-    readFile(
-      'test/src/features/object_detection/data/data_sources/room_object.jpg',
-    ).path,
+    readFile(AppImageTest.roomObject).path,
   );
 
   setUp(() {
@@ -39,9 +38,7 @@ void main() async {
           )).thenAnswer((_) async => Response(
             requestOptions: RequestOptions(),
             data: jsonDecode(
-              readJson(
-                'test/src/features/object_detection/data/models/object_detection_result.json',
-              ),
+              readJson(AppJsonTest.detectionResult),
             ),
             statusCode: 200,
           ));

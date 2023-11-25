@@ -5,6 +5,7 @@ import 'package:simple_tools_app/src/features/object_detection/data/models/objec
 import 'package:simple_tools_app/src/features/object_detection/domain/entities/object_detection.dart';
 
 import '../../../../../helper/file_reader.dart';
+import '../../../../app/resources/assets.dart';
 
 void main() {
   const tObjectDetectionModel = ObjectDetectionModel(
@@ -34,8 +35,7 @@ void main() {
   test('should return object detection model from json', () {
     // arrange
     Iterable<dynamic> tJson = jsonDecode(
-      readJson(
-          'test/src/features/object_detection/data/models/object_detection_result.json'),
+      readJson(AppJsonTest.detectionResult),
     );
     // act
     final result =

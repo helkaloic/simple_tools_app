@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:simple_tools_app/src/app/constants/app_url.dart';
 import 'package:simple_tools_app/src/core/error/exception.dart';
@@ -8,7 +9,6 @@ abstract class ObjectDetectionRemoteDataSource {
   /// Calls the https://api.api-ninjas.com/v1/objectdetection endpoint.
   ///
   /// Throw a [ServerException] for all server error codes.
-  /// Throw a [DioException] for all Dio error codes.
   Future<List<ObjectDetectionModel>> postImageToDetect(XFile image);
 }
 
@@ -23,7 +23,7 @@ class ObjectDetectionRemoteDataSourceImpl
       sendTimeout: const Duration(seconds: 10),
       receiveTimeout: const Duration(seconds: 10),
       headers: {
-        'X-Api-Key': 'YOUR_API_KEY',
+        'X-Api-Key': dotenv.env['API_NINJAS_KEY'],
         'Content-Type': 'multipart/form-data',
       },
     );
