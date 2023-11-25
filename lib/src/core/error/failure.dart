@@ -20,3 +20,7 @@ class ConnectionFailure extends Failure {
 class NoFileFailure extends Failure {
   const NoFileFailure(super.message);
 }
+
+class UnhandleFailure extends Failure {
+  const UnhandleFailure(super.message);
+}

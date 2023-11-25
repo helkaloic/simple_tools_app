@@ -1,0 +1,15 @@
+{
+    "length": 2,
+    "tools": [
+        {
+            "body": "Detect list of objects from an image.",
+            "icon": "assets/svg/object_detection.svg",
+            "title": "Object Detection 2"
+        },
+        {
+            "body": "Detect list of objects from an image.",
+            "icon": "assets/svg/object_detection.svg",
+            "title": "Object Detection"
+        }
+    ]
+}

@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mocktail/mocktail.dart';
@@ -27,6 +29,8 @@ void main() async {
       dio: mockDio,
     );
   });
+
+  dotenv.testLoad(fileInput: File('test/assets/env/.env').readAsStringSync());
 
   group('object detection datasource test', () {
     test('should return object detection model from api', () async {
