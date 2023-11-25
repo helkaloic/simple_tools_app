@@ -26,7 +26,7 @@ class MainApp extends StatelessWidget {
           title: 'Simple Tools',
           debugShowCheckedModeBanner: false,
           routerConfig: sl<AppRouter>().router,
-          theme: defaultAppTheme,
+          theme: AppTheme.defaultAppTheme,
         ),
       ),
     );

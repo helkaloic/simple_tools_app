@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:go_router/go_router.dart';
 import 'package:simple_tools_app/src/app/services/navigation_service.dart';
-import 'package:simple_tools_app/src/features/home/presentation/page/home_page.dart';
+import 'package:simple_tools_app/src/features/home/presentation/pages/home_page.dart';
 import 'package:simple_tools_app/src/features/object_detection/presentation/pages/fullscreen_image_page.dart';
 import 'package:simple_tools_app/src/features/object_detection/presentation/pages/object_detection_page.dart';
 
