@@ -8,3 +8,12 @@ sealed class SearchToolEvent extends Equatable {
 }
 
 class LoadAllToolsEvent extends SearchToolEvent {}
+
+class SearchForToolsEvent extends SearchToolEvent {
+  final String value;
+
+  const SearchForToolsEvent(this.value);
+
+  @override
+  List<Object> get props => [value];
+}

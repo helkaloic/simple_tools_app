@@ -14,6 +14,7 @@ import 'package:simple_tools_app/src/features/tool/data/data_sources/tool_local_
 import 'package:simple_tools_app/src/features/tool/data/repositories/tool_repository_impl.dart';
 import 'package:simple_tools_app/src/features/tool/domain/repositories/tool_repository.dart';
 import 'package:simple_tools_app/src/features/tool/domain/usecases/get_tool_info.dart';
+import 'package:simple_tools_app/src/features/tool/domain/usecases/search_for_tool.dart';
 import 'package:simple_tools_app/src/features/tool/presentation/bloc/search_tool_bloc.dart';
 
 final sl = GetIt.instance;
@@ -60,7 +61,8 @@ FutureVoid setUpServiceLocator() async {
 
   // Usecase
   sl.registerLazySingleton(() => GetToolInfo(repository: sl()));
+  sl.registerLazySingleton(() => SearchForTool(repository: sl()));
 
   // Bloc
-  sl.registerFactory(() => SearchToolBloc(sl()));
+  sl.registerFactory(() => SearchToolBloc(sl(), sl()));
 }

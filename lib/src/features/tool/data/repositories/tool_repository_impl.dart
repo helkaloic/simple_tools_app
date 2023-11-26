@@ -1,4 +1,5 @@
 import 'package:fpdart/fpdart.dart';
+import 'package:simple_tools_app/src/app/constants/app_string.dart';
 import 'package:simple_tools_app/src/core/error/failure.dart';
 import 'package:simple_tools_app/src/core/typedef/typedefs.dart';
 import 'package:simple_tools_app/src/features/tool/data/data_sources/tool_local_data_source.dart';
@@ -17,6 +18,18 @@ class ToolRepositoryImpl implements ToolRepository {
       return Right(result.map((e) => e.toEntity()).toList());
     } on UnimplementedError {
       return const Left(UnhandleFailure('Fail to read tools list.'));
+    }
+  }
+
+  @override
+  FutureEither<List<ToolEntity>> searchForTool(String value) async {
+    try {
+      final result = await dataSource.searchForTools(value);
+      return Right(result.map((e) => e.toEntity()).toList());
+    } on UnimplementedError {
+      return const Left(
+        UnhandleFailure(AppStringConst.unexpectedErrorMessage),
+      );
     }
   }
 }

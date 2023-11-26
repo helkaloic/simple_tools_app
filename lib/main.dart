@@ -13,5 +13,5 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await di.setUpServiceLocator();
-  runApp(const MainApp());
+  runApp(const App());
 }

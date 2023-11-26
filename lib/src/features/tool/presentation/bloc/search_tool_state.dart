@@ -15,10 +15,16 @@ final class LoadedSearchToolState extends SearchToolState {
   final List<ToolEntity> list;
 
   const LoadedSearchToolState(this.list);
+
+  @override
+  List<Object> get props => [list];
 }
 
 final class ErrorSearchToolState extends SearchToolState {
   final String message;
 
   const ErrorSearchToolState(this.message);
+
+  @override
+  List<Object> get props => [message];
 }

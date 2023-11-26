@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:simple_tools_app/src/app/constants/app_string.dart';
 import 'package:simple_tools_app/src/core/error/failure.dart';
 import 'package:simple_tools_app/src/features/tool/data/data_sources/tool_local_data_source.dart';
 import 'package:simple_tools_app/src/features/tool/data/models/tool.dart';
@@ -22,7 +23,7 @@ void main() {
   const tToolEntities = [ToolEntity(title: '', body: '', icon: '', route: '')];
   const tToolModels = [ToolModel(title: '', body: '', icon: '', route: '')];
 
-  group('tool repository impl test', () {
+  group('tool repository get all tools test', () {
     test('should return list of tool object', () async {
       when(() => mockToolLocalDataSource.getTools())
           .thenAnswer((_) async => tToolModels);
@@ -40,6 +41,30 @@ void main() {
       expect(
         result,
         equals(const Left(UnhandleFailure('Fail to read tools list.'))),
+      );
+    });
+  });
+
+  group('search for tools test', () {
+    test('should return list of tools', () async {
+      when(() => mockToolLocalDataSource.searchForTools('test'))
+          .thenAnswer((_) async => tToolModels);
+      final result = await toolRepositoryImpl.searchForTool('test');
+      result.fold(
+        (l) => fail('failed'),
+        (r) => expect(r, equals(tToolEntities)),
+      );
+    });
+    test('should return failure', () async {
+      when(() => mockToolLocalDataSource.searchForTools('test')).thenThrow(
+        UnimplementedError(AppStringConst.unexpectedErrorMessage),
+      );
+      final result = await toolRepositoryImpl.searchForTool('test');
+      expect(
+        result,
+        equals(const Left(UnhandleFailure(
+          AppStringConst.unexpectedErrorMessage,
+        ))),
       );
     });
   });
