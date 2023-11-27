@@ -1,8 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:simple_tools_app/firebase_options.dart';
 
+import 'bloc_provider_scope.dart';
+import 'firebase_options.dart';
 import 'injection_container.dart' as di;
 import 'src/app.dart';
 
@@ -13,5 +14,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await di.setUpServiceLocator();
-  runApp(const App());
+  runApp(
+    const BlocProviderScope(child: MainApp()),
+  );
 }

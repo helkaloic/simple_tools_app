@@ -1,21 +1,21 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:simple_tools_app/src/app/routes/router.dart';
-import 'package:simple_tools_app/src/core/typedef/typedefs.dart';
-import 'package:simple_tools_app/src/core/util/file_checker.dart';
-import 'package:simple_tools_app/src/features/object_detection/data/data_sources/object_detection_remote_data_source.dart';
-import 'package:simple_tools_app/src/features/object_detection/data/repositories/object_detection_repository_impl.dart';
-import 'package:simple_tools_app/src/features/object_detection/domain/repositories/object_detection_repository.dart';
-import 'package:simple_tools_app/src/features/object_detection/domain/usecases/post_image_to_detect.dart';
-import 'package:simple_tools_app/src/features/object_detection/presentation/bloc/object_detection/object_detection_bloc.dart';
-import 'package:simple_tools_app/src/features/object_detection/presentation/bloc/pick_image/pick_image_bloc.dart';
-import 'package:simple_tools_app/src/features/tool/data/data_sources/tool_local_data_source.dart';
-import 'package:simple_tools_app/src/features/tool/data/repositories/tool_repository_impl.dart';
-import 'package:simple_tools_app/src/features/tool/domain/repositories/tool_repository.dart';
-import 'package:simple_tools_app/src/features/tool/domain/usecases/get_tool_info.dart';
-import 'package:simple_tools_app/src/features/tool/domain/usecases/search_for_tool.dart';
-import 'package:simple_tools_app/src/features/tool/presentation/bloc/search_tool_bloc.dart';
+
+import 'src/app/routes/router.dart';
+import 'src/core/typedef/typedefs.dart';
+import 'src/core/util/file_checker.dart';
+import 'src/features/object_detection/data/data_sources/object_detection_remote_data_source.dart';
+import 'src/features/object_detection/data/repositories/object_detection_repository_impl.dart';
+import 'src/features/object_detection/domain/repositories/object_detection_repository.dart';
+import 'src/features/object_detection/domain/usecases/post_image_to_detect.dart';
+import 'src/features/object_detection/presentation/bloc/object_detection/object_detection_bloc.dart';
+import 'src/features/object_detection/presentation/bloc/pick_image/pick_image_bloc.dart';
+import 'src/features/tool/data/data_sources/tool_local_data_source.dart';
+import 'src/features/tool/data/repositories/tool_repository_impl.dart';
+import 'src/features/tool/domain/repositories/tool_repository.dart';
+import 'src/features/tool/domain/usecases/get_tool_info.dart';
+import 'src/features/tool/presentation/bloc/search_tool_bloc.dart';
 
 final sl = GetIt.instance;
 
@@ -61,8 +61,7 @@ FutureVoid setUpServiceLocator() async {
 
   // Usecase
   sl.registerLazySingleton(() => GetToolInfo(repository: sl()));
-  sl.registerLazySingleton(() => SearchForTool(repository: sl()));
 
   // Bloc
-  sl.registerFactory(() => SearchToolBloc(sl(), sl()));
+  sl.registerFactory(() => SearchToolBloc(sl()));
 }

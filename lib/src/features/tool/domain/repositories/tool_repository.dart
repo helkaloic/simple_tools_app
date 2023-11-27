@@ -3,5 +3,4 @@ import 'package:simple_tools_app/src/features/tool/domain/entities/tool.dart';
 
 abstract class ToolRepository {
   FutureEither<List<ToolEntity>> getToolsInfo();
-  FutureEither<List<ToolEntity>> searchForTool(String value);
 }

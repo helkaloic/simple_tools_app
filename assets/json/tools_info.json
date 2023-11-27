@@ -1,17 +1,10 @@
 {
-    "length": 3,
     "tools": [
         {
             "body": "Detect list of objects from an image.",
             "icon": "assets/svg/object_detection.svg",
             "route": "/objectDetection",
             "title": "Object Detection"
-        },
-        {
-            "body": "Chat with AI.",
-            "icon": "assets/svg/object_detection.svg",
-            "route": "/objectDetection",
-            "title": "Chat GPT"
         }
     ]
 }

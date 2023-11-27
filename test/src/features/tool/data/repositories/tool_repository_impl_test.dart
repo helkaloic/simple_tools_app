@@ -40,31 +40,9 @@ void main() {
       final result = await toolRepositoryImpl.getToolsInfo();
       expect(
         result,
-        equals(const Left(UnhandleFailure('Fail to read tools list.'))),
-      );
-    });
-  });
-
-  group('search for tools test', () {
-    test('should return list of tools', () async {
-      when(() => mockToolLocalDataSource.searchForTools('test'))
-          .thenAnswer((_) async => tToolModels);
-      final result = await toolRepositoryImpl.searchForTool('test');
-      result.fold(
-        (l) => fail('failed'),
-        (r) => expect(r, equals(tToolEntities)),
-      );
-    });
-    test('should return failure', () async {
-      when(() => mockToolLocalDataSource.searchForTools('test')).thenThrow(
-        UnimplementedError(AppStringConst.unexpectedErrorMessage),
-      );
-      final result = await toolRepositoryImpl.searchForTool('test');
-      expect(
-        result,
-        equals(const Left(UnhandleFailure(
-          AppStringConst.unexpectedErrorMessage,
-        ))),
+        equals(const Left(
+          UnhandleFailure(AppStringConst.unexpectedErrorMessage),
+        )),
       );
     });
   });

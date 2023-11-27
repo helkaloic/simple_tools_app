@@ -17,16 +17,6 @@ class ToolRepositoryImpl implements ToolRepository {
       final result = await dataSource.getTools();
       return Right(result.map((e) => e.toEntity()).toList());
     } on UnimplementedError {
-      return const Left(UnhandleFailure('Fail to read tools list.'));
-    }
-  }
-
-  @override
-  FutureEither<List<ToolEntity>> searchForTool(String value) async {
-    try {
-      final result = await dataSource.searchForTools(value);
-      return Right(result.map((e) => e.toEntity()).toList());
-    } on UnimplementedError {
       return const Left(
         UnhandleFailure(AppStringConst.unexpectedErrorMessage),
       );
