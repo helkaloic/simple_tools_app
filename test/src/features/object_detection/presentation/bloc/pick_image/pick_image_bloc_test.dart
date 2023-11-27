@@ -2,7 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:simple_tools_app/src/features/object_detection/presentation/bloc/pick_image/pick_image_bloc.dart';
+import 'package:simple_tools_app/src/features/object_detection/presentation/blocs/pick_image/pick_image_bloc.dart';
 
 class MockImagePicker extends Mock implements ImagePicker {}
 

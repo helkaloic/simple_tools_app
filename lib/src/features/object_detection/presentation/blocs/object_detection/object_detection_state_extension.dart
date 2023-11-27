@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_tools_app/src/features/object_detection/domain/entities/object_detection.dart';
-import 'package:simple_tools_app/src/features/object_detection/presentation/bloc/object_detection/object_detection_bloc.dart';
+import 'package:simple_tools_app/src/features/object_detection/presentation/blocs/object_detection/object_detection_bloc.dart';
 
 extension ObjectDetectionStateExtension on ObjectDetectionState {
   Widget when({

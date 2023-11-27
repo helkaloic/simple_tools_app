@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_tools_app/src/core/widgets/app_bar.dart';
 import 'package:simple_tools_app/src/core/widgets/gap.dart';
 import 'package:simple_tools_app/src/features/object_detection/presentation/widgets/detected_object_action.dart';
 import 'package:simple_tools_app/src/features/object_detection/presentation/widgets/select_image_function.dart';
@@ -9,9 +10,7 @@ class ObjectDetectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Object detection'),
-      ),
+      appBar: appBarCustom(),
       body: const SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Padding(

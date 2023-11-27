@@ -9,8 +9,8 @@ import 'src/features/object_detection/data/data_sources/object_detection_remote_
 import 'src/features/object_detection/data/repositories/object_detection_repository_impl.dart';
 import 'src/features/object_detection/domain/repositories/object_detection_repository.dart';
 import 'src/features/object_detection/domain/usecases/post_image_to_detect.dart';
-import 'src/features/object_detection/presentation/bloc/object_detection/object_detection_bloc.dart';
-import 'src/features/object_detection/presentation/bloc/pick_image/pick_image_bloc.dart';
+import 'src/features/object_detection/presentation/blocs/object_detection/object_detection_bloc.dart';
+import 'src/features/object_detection/presentation/blocs/pick_image/pick_image_bloc.dart';
 import 'src/features/tool/data/data_sources/tool_local_data_source.dart';
 import 'src/features/tool/data/repositories/tool_repository_impl.dart';
 import 'src/features/tool/domain/repositories/tool_repository.dart';

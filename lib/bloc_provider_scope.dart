@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'injection_container.dart';
-import 'src/features/object_detection/presentation/bloc/object_detection/object_detection_bloc.dart';
-import 'src/features/object_detection/presentation/bloc/pick_image/pick_image_bloc.dart';
+import 'src/features/object_detection/presentation/blocs/object_detection/object_detection_bloc.dart';
+import 'src/features/object_detection/presentation/blocs/pick_image/pick_image_bloc.dart';
 import 'src/features/tool/presentation/bloc/search_tool_bloc.dart';
 
 class BlocProviderScope extends StatelessWidget {

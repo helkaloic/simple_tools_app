@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:simple_tools_app/src/core/util/file_checker.dart';
 import 'package:simple_tools_app/src/features/object_detection/domain/usecases/post_image_to_detect.dart';
-import 'package:simple_tools_app/src/features/object_detection/presentation/bloc/object_detection/object_detection_bloc.dart';
+import 'package:simple_tools_app/src/features/object_detection/presentation/blocs/object_detection/object_detection_bloc.dart';
 
 class MockPostImageToDetect extends Mock implements PostImageToDetect {}
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_tools_app/src/core/extension/number.dart';
+import 'package:simple_tools_app/src/core/widgets/text.dart';
 
 import '../../domain/entities/object_detection.dart';
 import 'detection_table_cell.dart';
@@ -27,13 +28,23 @@ class DetectionResultTableWidget extends StatelessWidget {
               TableCell(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Center(child: Text('Object name')),
+                  child: Center(
+                    child: TextCustom(
+                      'Object name',
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
               TableCell(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Center(child: Text('Accuracy (%)')),
+                  child: Center(
+                    child: TextCustom(
+                      'Accuracy (%)',
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ],

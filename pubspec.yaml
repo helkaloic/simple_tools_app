@@ -26,7 +26,8 @@ dependencies:
   google_fonts: ^6.1.0
   image_picker: ^1.0.4
   intl: ^0.18.1
-  permission_handler: ^11.0.1
+  lottie: ^2.7.0
+  permission_handler: ^11.1.0
   rxdart: ^0.27.7
   shared_preferences: ^2.2.2
 

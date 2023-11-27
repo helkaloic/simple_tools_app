@@ -27,12 +27,12 @@ class HomeHeaderWidget extends StatelessWidget {
               TextCustom(
                 'Pick',
                 color: AppColor.darkPrimary,
-                fontSize: 54,
+                fontSize: 48,
                 fontWeight: FontWeight.bold,
               ),
               TextCustom(
                 'your tools',
-                fontSize: 38,
+                fontSize: 40,
                 color: AppColor.darkPrimary,
                 fontWeight: FontWeight.w400,
               ),

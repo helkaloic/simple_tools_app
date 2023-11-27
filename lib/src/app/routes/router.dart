@@ -20,12 +20,12 @@ class AppRouter {
         routes: [
           //? Route: '/objectDetection'
           GoRoute(
-            path: AppRoutes.pathName(AppRoutes.objectDetection),
+            path: 'objectDetection',
             builder: (context, state) => const ObjectDetectionPage(),
             routes: [
               //? Route: '/objectDetection/image'
               GoRoute(
-                path: AppRoutes.pathName(AppRoutes.objectDetectionImage),
+                path: 'image',
                 builder: (context, state) => FullScreenImagePage(
                   file: state.extra as File,
                 ),
