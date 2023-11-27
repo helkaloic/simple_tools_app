@@ -20,6 +20,7 @@ Here are some of the libraries that have been used in the app:
 - [flutter_screenutil](https://pub.dev/packages/flutter_screenutil): Design responsive and adaptive Flutter UI.
 - [go_router](https://pub.dev/packages/go_router): A declarative, customizable routing library for Flutter.
 - [fpdart](https://pub.dev/packages/fpdart): Functional programming constructs and utilities for Dart.
+- [mocktail](https://pub.dev/packages/mocktail): Mock library for Dart.
 
 And a few more...
 

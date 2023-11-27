@@ -38,6 +38,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mocktail: ^1.0.1
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/image/logo.png"
+  adaptive_icon_background: "#D3D3D3"
+  adaptive_icon_foreground: "assets/image/logo_foreground.png"
 
 flutter:
 
@@ -46,6 +54,7 @@ flutter:
   assets:
     - .env
     - assets/svg/
+    - assets/image/
     - assets/json/
   # fonts:
   #   - family: Schyler
