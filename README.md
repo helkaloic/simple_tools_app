@@ -27,7 +27,7 @@ And a few more...
 ## Set Up
 
 1. Create an environment file named `.env` in the root directory.
-2. Add the following line to your `.env` file, replacing `'YOUR_API_KEY'` with your actual API key:
+2. Add the following line to your `.env` file, replacing `'YOUR_API_KEY'` with your actual API key (from [here](https://api-ninjas.com/profile)):
 
     ```ini
     API_NINJAS_KEY='YOUR_API_KEY'
@@ -39,6 +39,12 @@ And a few more...
     flutter clean
     flutter pub get
     flutter run
+    ```
+
+4. (Optional) to build an `.apk` file:
+
+    ```bash
+    flutter build apk
     ```
 
 
