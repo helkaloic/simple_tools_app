@@ -41,6 +41,43 @@ And a few more...
     flutter run
     ```
 
+
+## Folder Structure
+
+Here's a simple folder structure of this project.
+
+> _**Note**: it may have more folders and files in there_
+
+```plaintext
+simple_tools_app/
+|-- assets/
+|-- lib/
+|   |-- src/
+|   |   |-- app/
+|   |   |-- core/
+|   |   |-- features/
+|   |   |   |-- feature-1/
+|   |   |   |   |-- data/
+|   |   |   |   |   |-- data_sources/
+|   |   |   |   |   |-- models/
+|   |   |   |   |   |-- repositories/
+|   |   |   |   |-- domain/
+|   |   |   |   |   |-- repositories/
+|   |   |   |   |   |-- entities/
+|   |   |   |   |   |-- usecases/
+|   |   |   |   |-- presentation/
+|   |   |   |   |   |-- blocs/
+|   |   |   |   |   |-- pages/
+|   |   |   |   |   |-- widgets/
+|   |   |   |-- feature-2/
+|   |   |   |-- ...
+|   |   |-- app.dart
+|   |-- main.dart
+|-- test/
+|-- .env   # Created in [Set Up]
+|-- pubspec.yaml
+```
+
 ## User Interface
 
 📸 Home Page:
