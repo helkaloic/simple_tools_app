@@ -48,8 +48,8 @@ class ObjectDetectionBloc
       (imageFile) async {
         final isConnected = await connectionChecker.isConnected;
 
-        isConnected.fold(
-          (fail) => emit(ErrorDetectionState(message: fail.message)),
+        await isConnected.fold(
+          (l) async => emit(ErrorDetectionState(message: l.message)),
           (r) async {
             final eitherFailureOrObj = await postImageToDetect(imageFile);
             eitherFailureOrObj.fold(

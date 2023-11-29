@@ -7,12 +7,13 @@ import 'package:simple_tools_app/src/core/typedef/typedefs.dart';
 class ConnectionChecker {
   FutureEither<bool> get isConnected async {
     final result = await Connectivity().checkConnectivity();
-    if (result != ConnectivityResult.none ||
-        result == ConnectivityResult.bluetooth) {
+    if (result != ConnectivityResult.none &&
+        result != ConnectivityResult.bluetooth) {
+      return const Right(true);
+    } else {
       return const Left(ConnectionFailure(
         AppStringConst.internetFailureMessage,
       ));
     }
-    return const Right(true);
   }
 }
