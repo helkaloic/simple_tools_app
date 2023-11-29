@@ -10,6 +10,7 @@ environment:
 dependencies:
   bloc: ^8.1.2
   collection: ^1.17.2
+  connectivity_plus: ^5.0.2
   cupertino_icons: ^1.0.2
   dio: ^5.3.3
   equatable: ^2.0.5
@@ -34,11 +35,11 @@ dependencies:
 dev_dependencies:
   bloc_test: ^9.1.5
   build_runner: ^2.4.6
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
   mocktail: ^1.0.1
-  flutter_launcher_icons: ^0.13.1
 
 flutter_launcher_icons:
   android: true

@@ -7,13 +7,14 @@ import 'firebase_options.dart';
 import 'injection_container.dart' as di;
 import 'src/app.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await di.setUpServiceLocator();
+
   runApp(
     const BlocProviderScope(child: MainApp()),
   );

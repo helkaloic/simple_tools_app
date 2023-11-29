@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:simple_tools_app/src/core/util/file_checker.dart';
+import 'package:simple_tools_app/src/core/utils/connection_checker.dart';
+import 'package:simple_tools_app/src/core/utils/file_checker.dart';
 import 'package:simple_tools_app/src/features/object_detection/domain/usecases/post_image_to_detect.dart';
 import 'package:simple_tools_app/src/features/object_detection/presentation/blocs/object_detection/object_detection_bloc.dart';
 
@@ -8,16 +9,23 @@ class MockPostImageToDetect extends Mock implements PostImageToDetect {}
 
 class MockFileChecker extends Mock implements FileChecker {}
 
+class MockConnectionChecker extends Mock implements ConnectionChecker {}
+
 void main() {
   late ObjectDetectionBloc objectDetectionBloc;
   late MockPostImageToDetect mockPostImageToDetect;
   late MockFileChecker mockFileChecker;
+  late MockConnectionChecker mockConnectionChecker;
 
   setUp(() {
     mockPostImageToDetect = MockPostImageToDetect();
     mockFileChecker = MockFileChecker();
-    objectDetectionBloc =
-        ObjectDetectionBloc(mockPostImageToDetect, mockFileChecker);
+    mockConnectionChecker = MockConnectionChecker();
+    objectDetectionBloc = ObjectDetectionBloc(
+      mockPostImageToDetect,
+      mockFileChecker,
+      mockConnectionChecker,
+    );
   });
 
   // final tFile = XFile(

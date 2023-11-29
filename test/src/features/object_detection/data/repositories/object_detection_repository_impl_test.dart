@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
@@ -55,21 +53,7 @@ void main() {
         (r) => expect(r, tEntities),
       );
     });
-    test('should return connection failure from data source', () async {
-      // arrange
-      when(() => mockDataSource.postImageToDetect(tFile))
-          .thenThrow(const SocketException(''));
-      // act
-      final result =
-          await objectDetectionRepositoryImpl.postImageToDetect(tFile);
-      // assert
-      expect(
-        result,
-        equals(const Left(
-          ConnectionFailure('Failed to connect to the internet.'),
-        )),
-      );
-    });
+
     test('should return server failure from data source', () async {
       // arrange
       when(() => mockDataSource.postImageToDetect(tFile))

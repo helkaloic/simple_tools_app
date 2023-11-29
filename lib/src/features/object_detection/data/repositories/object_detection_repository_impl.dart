@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:image_picker/image_picker.dart';
@@ -26,10 +24,6 @@ class ObjectDetectionRepositoryImpl implements ObjectDetectionRepository {
 
       final entites = remoteObjectDetection.map((e) => e.toEntity()).toList();
       return Right(entites);
-    } on SocketException {
-      return const Left(
-        ConnectionFailure('Failed to connect to the internet.'),
-      );
     } on ServerException {
       return const Left(
         ServerFailure('An error has occurred in the server.'),

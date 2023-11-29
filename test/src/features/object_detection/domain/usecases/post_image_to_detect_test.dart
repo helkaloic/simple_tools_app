@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:image_picker/image_picker.dart';
@@ -10,12 +11,16 @@ class MockObjectDetectionRepository extends Mock
     implements ObjectDetectionRepository {}
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   late MockObjectDetectionRepository mockObjectDetectionRepository;
   late PostImageToDetect postImageToDetect;
 
   setUp(() {
     mockObjectDetectionRepository = MockObjectDetectionRepository();
-    postImageToDetect = PostImageToDetect(mockObjectDetectionRepository);
+    postImageToDetect = PostImageToDetect(
+      mockObjectDetectionRepository,
+    );
   });
 
   const tObjDetectionEntitiy = ObjectDetectionEntity(
@@ -25,16 +30,18 @@ void main() {
 
   final tFile = XFile('/');
 
-  test('should get object detection entity from repository', () async {
-    // arrange
-    when(() => mockObjectDetectionRepository.postImageToDetect(tFile))
-        .thenAnswer(
-      (_) async => const Right([tObjDetectionEntitiy]),
-    );
-    // act
-    final result = await postImageToDetect(tFile);
+  group('object detection usecase test', () {
+    test('should get object detection entity from repository', () async {
+      // arrange
+      when(() => mockObjectDetectionRepository.postImageToDetect(tFile))
+          .thenAnswer(
+        (_) async => const Right([tObjDetectionEntitiy]),
+      );
+      // act
+      final result = await postImageToDetect(tFile);
 
-    // assert
-    expect(result, const Right([tObjDetectionEntitiy]));
+      // assert
+      expect(result, const Right([tObjDetectionEntitiy]));
+    });
   });
 }

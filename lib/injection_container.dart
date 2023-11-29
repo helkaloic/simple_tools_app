@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:simple_tools_app/src/core/utils/connection_checker.dart';
 
 import 'src/app/routes/router.dart';
 import 'src/core/typedef/typedefs.dart';
-import 'src/core/util/file_checker.dart';
+import 'src/core/utils/file_checker.dart';
 import 'src/features/object_detection/data/data_sources/object_detection_remote_data_source.dart';
 import 'src/features/object_detection/data/repositories/object_detection_repository_impl.dart';
 import 'src/features/object_detection/domain/repositories/object_detection_repository.dart';
@@ -29,6 +30,7 @@ FutureVoid setUpServiceLocator() async {
 
   //! Core
   sl.registerLazySingleton(() => FileChecker());
+  sl.registerLazySingleton(() => ConnectionChecker());
 
   //! Feature: Object detection
   // Data source
@@ -38,14 +40,16 @@ FutureVoid setUpServiceLocator() async {
 
   // Repository
   sl.registerLazySingleton<ObjectDetectionRepository>(
-    () => ObjectDetectionRepositoryImpl(remoteDataSource: sl()),
+    () => ObjectDetectionRepositoryImpl(
+      remoteDataSource: sl(),
+    ),
   );
 
   // Usecase
   sl.registerLazySingleton(() => PostImageToDetect(sl()));
 
   // Bloc
-  sl.registerFactory(() => ObjectDetectionBloc(sl(), sl()));
+  sl.registerFactory(() => ObjectDetectionBloc(sl(), sl(), sl()));
   sl.registerFactory(() => PickImageBloc(picker: sl()));
 
   //! Feature: Home & search tools

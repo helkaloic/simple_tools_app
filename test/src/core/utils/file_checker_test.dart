@@ -3,7 +3,7 @@ import 'package:fpdart/fpdart.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:simple_tools_app/src/core/error/failure.dart';
-import 'package:simple_tools_app/src/core/util/file_checker.dart';
+import 'package:simple_tools_app/src/core/utils/file_checker.dart';
 
 import '../../../helper/file_reader.dart';
 import '../../app/resources/assets.dart';
